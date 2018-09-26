@@ -3,7 +3,7 @@
 /**
  * push - adds to the top of the stack
  * @stk: the top of stack
- * @linenum: the token line number
+ * @line_number: the token line number
  *
  * Return: void
  */
@@ -25,7 +25,7 @@ void push(stack_t **stk, unsigned int line_number)
 		free_stk(stk, line_number);
 		exit(EXIT_FAILURE);
 	}
-	new->n = vars.temp;
+	new->n = variables.temp;
 	new->prev = NULL;
 	new->next = *stk;
 
@@ -38,7 +38,7 @@ void push(stack_t **stk, unsigned int line_number)
 /**
  * pall - function the prints the stack
  * @stk: the top of stack
- * @linenum: the line number
+ * @line_number: the line number
  *
  * Return: void
  */
@@ -78,7 +78,7 @@ void pop(stack_t **stk, unsigned int line_number)
 	if ((*stk)->next != NULL)
 	{
 		*stk = (*stk)->next;
-		vars.temp = (*stk)->n;
+		variables.temp = (*stk)->n;
 		free((*stk)->prev);
 		(*stk)->prev = NULL;
 	}
@@ -92,7 +92,7 @@ void pop(stack_t **stk, unsigned int line_number)
 /**
  * pint - function prints the value at the top of the stack
  * @stk: stack
- * @linenum: line number
+ * @line_num: line number
  * Return: void
  */
 void pint(stack_t **stk, unsigned int line_number)
