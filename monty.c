@@ -1,9 +1,5 @@
 #include "monty.h"
 
-char **tokenizer(char *line, unsigned int line_number);
-void readfile(FILE *filename);
-void print_All(void);
-
 void main(int argc, char *argv[])
 {
 	FILE *fp;
