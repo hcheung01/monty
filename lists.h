@@ -30,6 +30,6 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-#define DELIM " '\n'"
-
+#define DELIM " \n"
+void *findOps(char *tokens, int l_n);
 #endif
