@@ -34,8 +34,27 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+typedef struct variables
+{
+	int temp;
+	char check;
+}var_t;
+
+extern var_t var;
+var_t var;
+
 #define DELIM " \n"
+
 void findOps(char *token, stack_t **stk, unsigned int line_number);
 
 void free_stk(stack_t **stk, unsigned int line_number);
+
+void push(stack_t **stk, unsigned int line_number);
+
+void pall(stack_t **stk, unsigned int line_number);
+
+void pop(stack_t **stk, unsigned int line_number);
+
+void swap(stack_t **stk, unsigned int line_number);
+
 #endif

@@ -7,13 +7,13 @@
  *
  * Return: void
  */
-void push(stack_t **stk, unsigned int linenum)
+void push(stack_t **stk, unsigned int line_number)
 {
 	stack_t *new;
 
 	if (stk == NULL)
 	{
-		printf("L%d: unknown stack\n", linenum);
+		printf("L%d: unknown stack\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
@@ -22,7 +22,7 @@ void push(stack_t **stk, unsigned int linenum)
 	if (new == NULL)
 	{
 		printf("Error: malloc failed\n");
-		free_stk(stk, linenum);
+		free_stk(stk, line_number);
 		exit(EXIT_FAILURE);
 	}
 	new->n = vars.temp;
@@ -42,13 +42,13 @@ void push(stack_t **stk, unsigned int linenum)
  *
  * Return: void
  */
-void pall(stack_t **stk, unsigned int linenum)
+void pall(stack_t **stk, unsigned int line_number)
 {
 	stack_t *print;
 
 	if (stk == NULL)
 	{
-		printf("L%d: invalid stack\n", linenum);
+		printf("L%d: invalid stack\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
@@ -64,15 +64,15 @@ void pall(stack_t **stk, unsigned int linenum)
 /**
  * pop - function to remove the top of the stack
  * @stk: the top of the stack
- * @linenum: line number
+ * @line_number: line number
  *
  * Return: void
  */
-void pop(stack_t **stk, unsigned int linenum)
+void pop(stack_t **stk, unsigned int line_number)
 {
 	if (stk == NULL || *stk == NULL)
 	{
-		printf("L%d: can't pop an empty stack\n", linenum);
+		printf("L%d: can't pop an empty stack\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if ((*stk)->next != NULL)
@@ -95,11 +95,11 @@ void pop(stack_t **stk, unsigned int linenum)
  * @linenum: line number
  * Return: void
  */
-void pint(stack_t **stk, unsigned int linenum)
+void pint(stack_t **stk, unsigned int line_number)
 {
 	if (stk == NULL || *stk == NULL)
 	{
-		printf("L%d: can't pint, stack empty\n", linenum);
+		printf("L%d: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	else
@@ -109,17 +109,17 @@ void pint(stack_t **stk, unsigned int linenum)
 /**
  * swap - swapping first two elements on top of stack
  * @stk: stack
- * @linenum: line number
+ * @line_number: line number
  * Return: void
  */
-void swap(stack_t **stk, unsigned int linenum)
+void swap(stack_t **stk, unsigned int line_number)
 {
 	int temp;
 
 	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
 	{
-		printf("L%d: can't swap, stack too short\n", linenum);
-		free_stk(stk, linenum);
+		printf("L%d: can't swap, stack too short\n", line_number);
+		free_stk(stk, line_number);
 		exit(EXIT_FAILURE);
 	}
 	temp = (*stk)->n;
