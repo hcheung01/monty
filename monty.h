@@ -36,4 +36,6 @@ typedef struct instruction_s
 
 #define DELIM " \n"
 void findOps(char *token, stack_t **stk, unsigned int line_number);
+
+void free_stk(stack_t **stk, unsigned int line_number);
 #endif
