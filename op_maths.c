@@ -18,11 +18,11 @@ void add(stack_t **stk, unsigned int line_num)
 		exit(EXIT_FAILURE);
 	}
 
-	sum = var.temp;
+	sum = variables.temp;
 	pop(stk, line_num);
-	sum += var.temp;
+	sum += variables.temp;
 	pop(stk, line_num);
-	var.temp = sum;
+	variables.temp = sum;
 	push(stk, line_num);
 }
 
@@ -44,10 +44,10 @@ void sub(stack_t **stk, unsigned int line_num)
 		exit(EXIT_FAILURE);\
 	}
 
-	diff = var.temp;
+	diff = variables.temp;
 	pop(stk, line_num);
-	diff = var.temp - diff;
+	diff = variables.temp - diff;
 	pop(stk, line_num);
-	var.temp = diff;
+	variables.temp = diff;
 	push(stk, line_num);
 }

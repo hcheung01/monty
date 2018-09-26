@@ -45,6 +45,10 @@ var_t variables;
 
 #define DELIM " \n"
 
+void readfile(FILE *filename);
+
+char **tokenizer(char *line, unsigned int line_number);
+
 void findOps(char *token, stack_t **stk, unsigned int line_number);
 
 void free_stk(stack_t **stk, unsigned int line_number);
@@ -56,5 +60,7 @@ void pall(stack_t **stk, unsigned int line_number);
 void pop(stack_t **stk, unsigned int line_number);
 
 void swap(stack_t **stk, unsigned int line_number);
+
+void pint(stack_t **stk, unsigned int line_number);
 
 #endif
