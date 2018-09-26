@@ -47,7 +47,7 @@ var_t variables;
 
 void readfile(FILE *filename);
 
-char **tokenizer(char *line, unsigned int line_number);
+char *tokenizer(char *line);
 
 void findOps(char *token, stack_t **stk, unsigned int line_number);
 
