@@ -1,6 +1,5 @@
-PUSH 1 PUSH 100
-PUSH 2
-PUSH 3
-PUSH 4 saflkj
-POP
-PALL
+push 1
+push push
+push 10
+push 20
+

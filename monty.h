@@ -1,6 +1,10 @@
-#ifndef LISTS_H_
-#define LISTS_H_
+#ifndef MONTY_H_
+#define MONTY_H_
 
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -31,5 +35,5 @@ typedef struct instruction_s
 } instruction_t;
 
 #define DELIM " \n"
-void *findOps(char *tokens, int l_n);
+void findOps(char *token, stack_t **stk, unsigned int line_number);
 #endif
