@@ -35,7 +35,7 @@ void readfile(FILE *filename)
 	char **tokens;
 	unsigned int line_number;
 
-	line_number = 0;
+	line_number = 1;
 	while (getline(&buf, &bufsize, filename) != EOF)
 	{
 		tokens = tokenizer(buf, line_number);
@@ -70,7 +70,6 @@ char **tokenizer(char *line, unsigned int line_number)
 		findOps(tokens[count], stk, line_number);
 		count++;
 	}
-	printf("LINE NUM IS %d\n", line_number);
 	tokens[count] = NULL;
 	return (tokens);
 }

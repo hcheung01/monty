@@ -1,6 +1,13 @@
 #include "monty.h"
 
-void push();
+
+void push(stack_t **stk, unsigned int line_number)
+{
+	printf("LINENNNNN %d\n", line_number);
+	printf("YES FOUND ME\n");
+}
+
+
 /**
  * findOps - finds OpCode match and then executes the OpCode.
  * @token: token command passed.
@@ -12,7 +19,7 @@ void push();
 void findOps(char *token, stack_t **stk, unsigned int line_number)
 {
 	int a = 0;
-	printf("JOSH FUNCTION IS: %s\n", token);
+
 	instruction_t op[] = {
 		{"push", push},
 //		{"pall", pall},
@@ -26,16 +33,13 @@ void findOps(char *token, stack_t **stk, unsigned int line_number)
 	{
 		if (strcmp(token, op[a].opcode) == 0)
 		{
-			op[a].f(stk, line_number);
+			printf("FOUND OP: %s\n", op[a].opcode);
+			//op[a].f(stk, line_number);
 			return;
 		}
 		a++;
 	}
 //	free_stk(stk, line_number);
 	exit(EXIT_FAILURE);
-}
 
-void push()
-{
-	printf("PUSHED JOSH AROUND\n");
 }
