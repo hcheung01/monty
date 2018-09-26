@@ -15,9 +15,9 @@ void findOps(char *token, stack_t **stk, unsigned int line_number)
 	instruction_t op[] = {
 		{"push", push},
 		{"pall", pall},
-//		{"pint", pint},
+		{"pint", pint},
 		{"pop", pop},
-//		{"swap", swap},
+		{"swap", swap},
 		{NULL, NULL}
 	};
 
@@ -25,7 +25,6 @@ void findOps(char *token, stack_t **stk, unsigned int line_number)
 	{
 		if (strcmp(token, op[a].opcode) == 0)
 		{
-			printf("FOUND OP: %s\n", op[a].opcode);
 			op[a].f(stk, line_number);
 			return;
 		}
