@@ -1,7 +1,9 @@
 #include "monty.h"
 
 /**
- * nop - function that does nothing.
+ * _nop - function that does nothing.
+ * @stk: pointer to top of stack
+ * @line_number: total line number count
  *
  * Description: no operations
  * Return: na
