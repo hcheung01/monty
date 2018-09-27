@@ -80,12 +80,9 @@ void _div(stack_t **stk, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	quote = variables.temp;
+	quote = variables.temp->next->n / variables.temp->n;;
 	pop(stk, line_number);
-	quote = variables.temp / quote;
-	pop(stk, line_number);
-	variables.temp = quote;
-	push(stk, line_number);
+	(*stack)->n = quote;
 }
 /**
  * _mul - function with two arguments
