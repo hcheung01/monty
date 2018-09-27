@@ -41,6 +41,7 @@ void sub(stack_t **stk, unsigned int line_number)
 
 	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
 	{
+		line_number++;
 		fprintf(stderr, "L%u: can't sub, stack too short\n",
 			line_number);
 		free_stk(stk, line_number);
@@ -68,6 +69,7 @@ void _div(stack_t **stk, unsigned int line_number)
 
 	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
 	{
+		line_number++;
 		fprintf(stderr, "L%d: can't div, stack too short\n",
 			line_number);
 		free_stk(stk, line_number);
@@ -83,7 +85,7 @@ void _div(stack_t **stk, unsigned int line_number)
 
 	quote = variables.temp;
 	pop(stk, line_number);
-	quote = variables.temp / quote;
+	quote /= variables.temp;
 	pop(stk, line_number);
 	variables.temp = quote;
 	push(stk, line_number);
@@ -128,6 +130,7 @@ void _mod(stack_t **stk, unsigned int line_number)
 
 	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
 	{
+		line_number++;
 		fprintf(stderr, "L%d: can't mod, stack too short\n",
 			line_number);
 		free_stk(stk, line_number);
@@ -143,7 +146,7 @@ void _mod(stack_t **stk, unsigned int line_number)
 
 	modulus = variables.temp;
 	pop(stk, line_number);
-	modulus = variables.temp % modulus;
+	modulus %= variables.temp;
 	pop(stk, line_number);
 	variables.temp = modulus;
 	push(stk, line_number);
