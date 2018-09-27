@@ -37,6 +37,7 @@ void findOps(char *token, stack_t **stk, unsigned int line_number)
 		}
 		a++;
 	}
+	line_number++;
 	fprintf(stderr, "L%d: unknown instruction %s\n",
 		line_number, token);
 	free_stk(stk, line_number);
