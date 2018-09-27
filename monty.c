@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	size_t bufsize = 0;
 	char *input;
 	stack_t *stk = NULL;
-	unsigned int line_number = 1;
+	unsigned int line_number = 0;
 
 	filename = argv[1];
 	if (argc != 2)
