@@ -51,3 +51,54 @@ void pstr(stack_t **stk, __attribute__((unused)) unsigned int line_number)
 	}
 	printf("\n");
 }
+
+/**
+ * rotl - moves top of the stack to the bottom once.
+ * @stk: the stack.
+ * @line_number: the line number.
+ *
+ * Return: void.
+ */
+void rotl(stack_t **stk, __attribute__((unused))unsigned int line_number)
+{
+	stack_t *topdown;
+
+	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
+		return;
+
+	topdown = *stk;
+
+	while (topdown->next != NULL)
+		topdown = topdown->next;
+
+	topdown->next = *stk;
+	(*stk)->prev = topdown;
+	*stk = (*stk)->next;
+	(*stk)->prev = NULL;
+	topdown->next->next = NULL;
+}
+
+/**
+ * rotr - moves the bottom of the stack to the top.
+ * @stk: the stack.
+ * @line_number: the line number.
+ *
+ * Return: void.
+ */
+void rotr(stack_t **stk, __attribute__((unused))unsigned int line_number)
+{
+	stack_t *bottomsup;
+
+	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
+		return;
+
+	bottomsup = *stk;
+
+	while (bottomsup->next != NULL)
+		bottomsup = bottomsup->next;
+	bottomsup->next = *stk;
+	bottomsup->prev->next = NULL;
+	bottomsup->prev = NULL;
+	(*stk)->prev = bottomsup;
+	*stk == bottomsup;
+}
