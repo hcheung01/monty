@@ -16,7 +16,9 @@ void tokenizer(char *input, stack_t **stk, unsigned int line_number)
 
 	token = strtok(input, " ");
 	if (token == NULL || *token == ' ' || *token == '\n' || *token == '#')
+	{
 		return;
+	}
 	if (strcmp(token, "push") == 0)
 	{
 		tokens = token;
