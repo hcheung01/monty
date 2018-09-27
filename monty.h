@@ -42,8 +42,7 @@ typedef struct vars
 
 typedef void (*get_func)(stack_t **stack, unsigned int line_number);
 
-extern var_t variables;
-var_t variables;
+extern int args;
 
 #define DELIM " \n"
 

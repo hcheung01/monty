@@ -34,7 +34,7 @@ void readfile(FILE *filename)
 	while (getline(&buf, &bufsize, filename) != -1)
 	{
 		tokens = tokenizer(buf);
-		findOps(tokens);
+		findOps(stack_t **stk, args);
 		line_number++;
 	}
 	free(buf);
@@ -42,6 +42,7 @@ void readfile(FILE *filename)
 
 char *tokenizer(char *line)
 {
+	int *args;
 	char *token;
 
 	token = strtok(line, DELIM);
@@ -49,8 +50,7 @@ char *tokenizer(char *line)
 	{
 		return (NULL);
 	}
-
-        token = strtok(NULL, DELIM);
+        args = strtok(NULL, DELIM);
         if (token == NULL)
         {
                 return (NULL);
