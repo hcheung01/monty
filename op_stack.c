@@ -100,5 +100,5 @@ void rotr(stack_t **stk, __attribute__((unused))unsigned int line_number)
 	bottomsup->prev->next = NULL;
 	bottomsup->prev = NULL;
 	(*stk)->prev = bottomsup;
-	*stk == bottomsup;
+	*stk = bottomsup;
 }
