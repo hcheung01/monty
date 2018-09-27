@@ -83,4 +83,8 @@ int is_num(char *token);
 
 void _nop(stack_t **stk, unsigned int line_number);
 
+void pchar(stack_t **stk, unsigned int line_number);
+
+void pstr(stack_t **stk, __attribute__((unused)) unsigned int line_number);
+
 #endif
