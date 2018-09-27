@@ -37,10 +37,9 @@ int main(int argc, char *argv[])
 			input = strtok(buf, "\n");
 			tokenizer(input, &stk, line_number);
 		}
-		else
-			continue;
 		line_number++;
 	}
+	printf("FINAL line %d\n", line_number);
 	fclose(fp);
 	free(buf);
 	if (stk != NULL)
