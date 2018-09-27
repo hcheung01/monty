@@ -142,7 +142,7 @@ void _mod(stack_t **stk, unsigned int line_number)
 
 	modulus = variables.temp;
 	pop(stk, line_number);
-	modulus %= variables.temp;
+	modulus = variables.temp % modulus;
 	pop(stk, line_number);
 	variables.temp = modulus;
 	push(stk, line_number);
