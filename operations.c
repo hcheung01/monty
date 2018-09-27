@@ -45,6 +45,7 @@ void push(stack_t **stk, unsigned int line_number)
 void pall(stack_t **stk, unsigned int line_number)
 {
 	stack_t *print;
+	(void)line_number;
 
 	print = *stk;
 	while (print != NULL)
