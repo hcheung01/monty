@@ -51,4 +51,3 @@ void pstr(stack_t **stk, unsigned int line_number)
 	}
 	printf("\n");
 }
-
