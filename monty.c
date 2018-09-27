@@ -39,7 +39,6 @@ int main(int argc, char *argv[])
 		}
 		line_number++;
 	}
-	printf("FINAL line %d\n", line_number);
 	fclose(fp);
 	free(buf);
 	if (stk != NULL)
