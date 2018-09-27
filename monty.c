@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	FILE *fp;
 	char *filename, *buf = NULL;
 	size_t bufsize = 0;
-	char *seperate, *input;
+	char *input;
 	stack_t *stk = NULL;
 	unsigned int line_number = 1;
 

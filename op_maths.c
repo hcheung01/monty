@@ -109,3 +109,36 @@ void _mul(stack_t **stk, unsigned int line_number)
         variables.temp = product;
         push(stk, line_number);
 }
+
+/**
+ * _mod - function with two arguments
+ * @stk: the stack.
+ * @line_number: the line number.
+ *
+ * Return: void.
+ */
+void _mod(stack_t **stk, unsigned int line_number)
+{
+	int modulus;
+
+        if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
+        {
+		printf("L%d: can't mod, stack too short\n", line_number);
+                free_stk(stk, line_number);
+                exit(EXIT_FAILURE);
+	}
+
+        if (variables.temp == 0)
+        {
+		printf("L%d: division by zero\n", line_number);
+		free_stk(stk, line_number);
+                exit(EXIT_FAILURE);
+        }
+
+        modulus = variables.temp;
+        pop(stk, line_number);
+	modulus = variables.temp % modulus;
+        pop(stk, line_number);
+        variables.temp = modulus;
+        push(stk, line_number);
+}
