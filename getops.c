@@ -34,6 +34,8 @@ void findOps(char *token, stack_t **stk, unsigned int line_number)
 		}
 		a++;
 	}
+	fprintf(stderr, "L%d: unknown instruction %s\n",
+		line_number, token);
 	free_stk(stk, line_number);
 	exit(EXIT_FAILURE);
 
