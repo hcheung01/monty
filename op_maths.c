@@ -48,11 +48,10 @@ void sub(stack_t **stk, unsigned int line_number)
 
 	diff = variables.temp;
 	pop(stk, line_number);
-	diff = variables.temp - diff;
+	diff -= variables.temp;
 	pop(stk, line_number);
 	variables.temp = diff;
 	push(stk, line_number);
-	exit(EXIT_SUCCESS);
 }
 
 /**
