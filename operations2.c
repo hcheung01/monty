@@ -12,5 +12,5 @@ void nop(stack_t **stk, unsigned int line_number)
 	(void)stk;
 	(void)line_number;
 
-	exit(EXIT_SUCCESS);
+	;
 }
