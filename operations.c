@@ -92,7 +92,7 @@ void pop(stack_t **stk, unsigned int line_number)
 /**
  * pint - function prints the value at the top of the stack
  * @stk: stack
- * @line_num: line number
+ * @line_number: line number
  * Return: void
  */
 void pint(stack_t **stk, unsigned int line_number)

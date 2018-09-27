@@ -4,7 +4,7 @@
  * findOps - finds OpCode match and then executes the OpCode.
  * @token: token command passed.
  * @stk: the stack.
- * @linenum: the line number.
+ * @line_number: the line number.
  *
  * Return: void
  */

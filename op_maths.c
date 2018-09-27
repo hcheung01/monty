@@ -41,7 +41,7 @@ void sub(stack_t **stk, unsigned int line_number)
 	{
 		printf("L%d: can't subtract, stack too short\n", line_number);
 		free_stk(stk, line_number);
-		exit(EXIT_FAILURE);\
+		exit(EXIT_FAILURE);
 	}
 
 	diff = variables.temp;
@@ -52,7 +52,14 @@ void sub(stack_t **stk, unsigned int line_number)
 	push(stk, line_number);
 }
 
-void _div(stack_t **stk, unsigned int line_number)
+/**
+ * div - divide the top two elements of the stack.
+ * @stk: the stack.
+ * @line_number: the line number.
+ *
+ * Return: void.
+ */
+void div(stack_t **stk, unsigned int line_number)
 {
 	int quote;
 

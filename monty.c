@@ -1,5 +1,13 @@
 #include "monty.h"
 
+/**
+ * main - primary function with two arguments
+ * @argc: count limit to input
+ * @argv: filename
+ *
+ * Description: open file from argv[1] and get opcodes from file
+ * Return: success
+ */
 int main(int argc, char *argv[])
 {
 	FILE *fp;
@@ -31,13 +39,22 @@ int main(int argc, char *argv[])
 		}
 		line_number++;
 	}
- 	fclose(fp);
+	fclose(fp);
 	free(buf);
 	if (stk != NULL)
 		free_stk(&stk, line_number);
 	return (EXIT_SUCCESS);
 }
 
+/**
+ * tokenizer - function with 3 arguments
+ * @input: buffer input
+ * @stk: stack argument
+ * @line_number: line count
+ *
+ * Description: break up the buffer into tokens
+ * Return: na
+ */
 void tokenizer(char *input, stack_t **stk, unsigned int line_number)
 {
 	char *token;
