@@ -2,15 +2,13 @@
 
 /**
  * nop - function that does nothing.
- * @stk: the stack.
- * @line_number: the line number.
  *
- * Return: void
+ * Description: no operations
+ * Return: na
  */
-void nop(stack_t **stk, unsigned int line_number)
+void _nop(stack_t **stk, unsigned int line_number)
 {
 	(void)stk;
 	(void)line_number;
-
-	asm("nop");
+	;
 }

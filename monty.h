@@ -81,4 +81,6 @@ void _mod(stack_t **stk, unsigned int line_number);
 
 int is_num(char *token);
 
+void _nop(stack_t **stk, unsigned int line_number);
+
 #endif
