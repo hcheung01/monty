@@ -11,7 +11,7 @@ void pchar(stack_t **stk, unsigned int line_number)
 {
 	if (stk == NULL || *stk == NULL)
 	{
-		fprintf(stderr, "can't pchar, stack empty\n", line_number);
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
@@ -19,7 +19,7 @@ void pchar(stack_t **stk, unsigned int line_number)
 		printf("%c\n", variables.temp);
 	else
 	{
-		fprintf(stderr, "can't pchar, value out of range\n",
+		fprintf(stderr, "L%d: can't pchar, value out of range\n",
 			line_number);
 		exit(EXIT_FAILURE);
 	}
@@ -32,7 +32,7 @@ void pchar(stack_t **stk, unsigned int line_number)
  *
  * Return: void.
  */
-void pstr(stack_t **stk, unsigned int line_number)
+void pstr(stack_t **stk, __attribute__((unused)) unsigned int line_number)
 {
 	stack_t *output;
 
