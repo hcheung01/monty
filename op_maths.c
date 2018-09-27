@@ -93,21 +93,21 @@ void _div(stack_t **stk, unsigned int line_number)
  */
 void _mul(stack_t **stk, unsigned int line_number)
 {
-        int product;
+	int product;
 
-        if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
-        {
-                printf("L%d: can't mul, stack too short\n", line_number);
-                free_stk(stk, line_number);
-                exit(EXIT_FAILURE);
-        }
+	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
+	{
+		printf("L%d: can't mul, stack too short\n", line_number);
+		free_stk(stk, line_number);
+		exit(EXIT_FAILURE);
+	}
 
-        product = variables.temp;
-        pop(stk, line_number);
-        product = variables.temp * product;
-        pop(stk, line_number);
-        variables.temp = product;
-        push(stk, line_number);
+	product = variables.temp;
+	pop(stk, line_number);
+	product = variables.temp * product;
+	pop(stk, line_number);
+	variables.temp = product;
+	push(stk, line_number);
 }
 
 /**
@@ -121,24 +121,24 @@ void _mod(stack_t **stk, unsigned int line_number)
 {
 	int modulus;
 
-        if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
-        {
+	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
+	{
 		printf("L%d: can't mod, stack too short\n", line_number);
-                free_stk(stk, line_number);
-                exit(EXIT_FAILURE);
+		free_stk(stk, line_number);
+		exit(EXIT_FAILURE);
 	}
 
-        if (variables.temp == 0)
-        {
+	if (variables.temp == 0)
+	{
 		printf("L%d: division by zero\n", line_number);
 		free_stk(stk, line_number);
-                exit(EXIT_FAILURE);
-        }
+		exit(EXIT_FAILURE);
+	}
 
-        modulus = variables.temp;
-        pop(stk, line_number);
+	modulus = variables.temp;
+	pop(stk, line_number);
 	modulus = variables.temp % modulus;
-        pop(stk, line_number);
-        variables.temp = modulus;
-        push(stk, line_number);
+	pop(stk, line_number);
+	variables.temp = modulus;
+	push(stk, line_number);
 }

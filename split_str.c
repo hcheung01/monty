@@ -11,27 +11,27 @@
  */
 void tokenizer(char *input, stack_t **stk, unsigned int line_number)
 {
-        char *token;
-        char *tokens;
+	char *token;
+	char *tokens;
 
-        token = strtok(input, " ");
-        if (token == NULL || *token == ' ' || *token == '\n')
-                return;
-        if (strcmp(token, "push") == 0)
+	token = strtok(input, " ");
+	if (token == NULL || *token == ' ' || *token == '\n')
+		return;
+	if (strcmp(token, "push") == 0)
 	{
-                tokens = token;
-                token = strtok(NULL, " ");
-                if (!is_num(token))
-                {
-                        printf("L%d: usage: push integer\n", line_number);
-                        free_stk(stk, line_number);
-                        exit(EXIT_FAILURE);
-                }
-                variables.temp = atoi(token);
-                findOps(tokens, stk, line_number);
-        }
-        else
-                findOps(token, stk, line_number);
+		tokens = token;
+		token = strtok(NULL, " ");
+		if (!is_num(token))
+		{
+			printf("L%d: usage: push integer\n", line_number);
+			free_stk(stk, line_number);
+			exit(EXIT_FAILURE);
+		}
+		variables.temp = atoi(token);
+		findOps(tokens, stk, line_number);
+	}
+	else
+		findOps(token, stk, line_number);
 }
 
 /**
@@ -42,16 +42,16 @@ void tokenizer(char *input, stack_t **stk, unsigned int line_number)
  */
 int is_num(char *token)
 {
-        if (token == NULL)
-                return (0);
-        if (*token == '-')
-                token++;
-        while (*token != '\0')
-        {
-                if (!isdigit(*token))
-                        return (0);
-                token++;
-        }
-        token++;
-        return (1);
+	if (token == NULL)
+		return (0);
+	if (*token == '-')
+		token++;
+	while (*token != '\0')
+	{
+		if (!isdigit(*token))
+			return (0);
+		token++;
+	}
+	token++;
+	return (1);
 }
