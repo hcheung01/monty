@@ -15,7 +15,7 @@ void tokenizer(char *input, stack_t **stk, unsigned int line_number)
 	char *tokens;
 
 	token = strtok(input, " ");
-	if (token == NULL || *token == ' ' || *token == '\n')
+	if (token == NULL || *token == ' ' || *token == '\n' || *token == '#')
 		return;
 	if (strcmp(token, "push") == 0)
 	{
@@ -23,7 +23,7 @@ void tokenizer(char *input, stack_t **stk, unsigned int line_number)
 		token = strtok(NULL, " ");
 		if (!is_num(token))
 		{
-			printf("L%d: usage: push integer\n", line_number);
+			fprintf(stderr, "usage: push integer\n", line_number);
 			free_stk(stk, line_number);
 			exit(EXIT_FAILURE);
 		}
