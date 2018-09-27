@@ -105,13 +105,6 @@ void _mul(stack_t **stk, unsigned int line_number)
 		free_stk(stk, line_number);
 		exit(EXIT_FAILURE);
 	}
-	if (line_number < 2)
-	{
-		fprintf(stderr, "L%d: can't mul, stack too short\n",
-                        line_number);
-                free_stk(stk, line_number);
-                exit(EXIT_FAILURE);
-	}
 
 	product = variables.temp;
 	pop(stk, line_number);
@@ -149,7 +142,7 @@ void _mod(stack_t **stk, unsigned int line_number)
 
 	modulus = variables.temp;
 	pop(stk, line_number);
-	modulus = variables.temp % modulus;
+	modulus %= variables.temp;
 	pop(stk, line_number);
 	variables.temp = modulus;
 	push(stk, line_number);
