@@ -53,13 +53,13 @@ void sub(stack_t **stk, unsigned int line_number)
 }
 
 /**
- * div - divide the top two elements of the stack.
+ * _div - divide the top two elements of the stack.
  * @stk: the stack.
  * @line_number: the line number.
  *
  * Return: void.
  */
-void div(stack_t **stk, unsigned int line_number)
+void _div(stack_t **stk, unsigned int line_number)
 {
 	int quote;
 
