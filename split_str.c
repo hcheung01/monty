@@ -32,7 +32,7 @@ void tokenizer(char *input, stack_t **stk, unsigned int line_number)
 			exit(EXIT_FAILURE);
 		}
 		variables.temp = atoi(token);
-	        findOps(tokens, stk, line_number);
+		findOps(tokens, stk, line_number);
 	}
 	else
 		findOps(token, stk, line_number);
