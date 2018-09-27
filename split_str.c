@@ -25,13 +25,14 @@ void tokenizer(char *input, stack_t **stk, unsigned int line_number)
 		token = strtok(NULL, " ");
 		if (!is_num(token))
 		{
+			line_number++;
 			fprintf(stderr, "L%d: usage: push integer\n",
 				line_number);
 			free_stk(stk, line_number);
 			exit(EXIT_FAILURE);
 		}
 		variables.temp = atoi(token);
-		findOps(tokens, stk, line_number);
+	        findOps(tokens, stk, line_number);
 	}
 	else
 		findOps(token, stk, line_number);
