@@ -40,8 +40,7 @@ void findOps(char *token, stack_t **stk, unsigned int line_number)
 		}
 		a++;
 	}
-	if (op[a].opcode == NULL)
-		line_number++;
+	line_number++;
 	fprintf(stderr, "L%d: unknown instruction %s\n",
 		line_number, token);
 	free_stk(stk, line_number);
