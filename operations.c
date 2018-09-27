@@ -46,6 +46,8 @@ void pall(stack_t **stk, unsigned int line_number)
 {
 	stack_t *print;
 
+	if (stk == NULL)
+		exit(EXIT_FAILURE);
 	print = *stk;
 	while (print != NULL)
 	{
