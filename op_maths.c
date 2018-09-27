@@ -98,12 +98,19 @@ void _mul(stack_t **stk, unsigned int line_number)
 {
 	int product;
 
-	if (stk == NULL || *stk == NULL || (*stk)->next == NULL && !line_number)
+	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n",
 			line_number);
 		free_stk(stk, line_number);
 		exit(EXIT_FAILURE);
+	}
+	if (line_number < 2)
+	{
+		fprintf(stderr, "L%d: can't mul, stack too short\n",
+                        line_number);
+                free_stk(stk, line_number);
+                exit(EXIT_FAILURE);
 	}
 
 	product = variables.temp;
