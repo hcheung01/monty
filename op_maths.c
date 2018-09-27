@@ -40,7 +40,7 @@ void sub(stack_t **stk, unsigned int line_number)
 
 	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't subtract, stack too short\n",
+		fprintf(stderr, "L%d: can't sub, stack too short\n",
 			line_number);
 		free_stk(stk, line_number);
 		exit(EXIT_FAILURE);
@@ -52,6 +52,7 @@ void sub(stack_t **stk, unsigned int line_number)
 	pop(stk, line_number);
 	variables.temp = diff;
 	push(stk, line_number);
+	exit(EXIT_SUCCESS);
 }
 
 /**
