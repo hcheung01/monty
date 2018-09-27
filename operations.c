@@ -46,14 +46,7 @@ void pall(stack_t **stk, unsigned int line_number)
 {
 	stack_t *print;
 
-	if (stk == NULL)
-	{
-		fprintf(stderr, "L%d: invalid stack\n", line_number);
-		exit(EXIT_FAILURE);
-	}
-
 	print = *stk;
-
 	while (print != NULL)
 	{
 		fprintf(stdout, "%d\n", print->n);
