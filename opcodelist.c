@@ -8,7 +8,8 @@
  *
  * Return: void
  */
-void findOps(char *token, stack_t **stk, unsigned int line_number)
+
+get_func findOps(char *token)
 {
 	int a = 0;
 
@@ -25,13 +26,11 @@ void findOps(char *token, stack_t **stk, unsigned int line_number)
 	{
 		if (strcmp(token, op[a].opcode) == 0)
 		{
-			printf("FOUND OP: %s\n", op[a].opcode);
-			op[a].f(stk, line_number);
-			return;
+			return (op[a].f);
 		}
 		a++;
 	}
-	free_stk(stk, line_number);
+//	free_stk(stk, line_number);
 	exit(EXIT_FAILURE);
 
 }

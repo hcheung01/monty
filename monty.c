@@ -34,7 +34,7 @@ void readfile(FILE *filename)
 	while (getline(&buf, &bufsize, filename) != -1)
 	{
 		tokens = tokenizer(buf);
-		printf("NEW TOKENS %s\n", tokens);
+		findOps(tokens);
 		line_number++;
 	}
 	free(buf);
@@ -49,12 +49,11 @@ char *tokenizer(char *line)
 	{
 		return (NULL);
 	}
-	printf("tokenizer is at %s\n", token);
+
         token = strtok(NULL, DELIM);
         if (token == NULL)
         {
                 return (NULL);
         }
-        printf("tokenizer is at %s\n", token);
 	return (token);
 }

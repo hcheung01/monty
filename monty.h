@@ -40,6 +40,8 @@ typedef struct vars
 	char check;
 }var_t;
 
+typedef void (*get_func)(stack_t **stack, unsigned int line_number);
+
 extern var_t variables;
 var_t variables;
 
@@ -49,7 +51,7 @@ void readfile(FILE *filename);
 
 char *tokenizer(char *line);
 
-void findOps(char *token, stack_t **stk, unsigned int line_number);
+get_func findOps(char *token);
 
 void free_stk(stack_t **stk, unsigned int line_number);
 
