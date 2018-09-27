@@ -34,7 +34,7 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-typedef struct vars
+typedef struct var
 {
 	int temp;
 	char check;
@@ -62,6 +62,12 @@ void pop(stack_t **stk, unsigned int line_number);
 void swap(stack_t **stk, unsigned int line_number);
 
 void pint(stack_t **stk, unsigned int line_number);
+
+void add(stack_t **stk, unsigned int line_number);
+
+void sub(stack_t **stk, unsigned int line_number);
+
+void _div(stack_t **stk, unsigned int line_number);
 
 int is_num(char *token);
 
