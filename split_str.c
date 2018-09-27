@@ -23,7 +23,8 @@ void tokenizer(char *input, stack_t **stk, unsigned int line_number)
 		token = strtok(NULL, " ");
 		if (!is_num(token))
 		{
-			fprintf(stderr, "usage: push integer\n", line_number);
+			fprintf(stderr, "L%d: usage: push integer\n",
+				line_number);
 			free_stk(stk, line_number);
 			exit(EXIT_FAILURE);
 		}
