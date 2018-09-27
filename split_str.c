@@ -15,7 +15,7 @@ void tokenizer(char *input, stack_t **stk, unsigned int line_number)
 	char *tokens;
 
 	token = strtok(input, " ");
-	if (token == NULL || *token == ' ' || *token == '\n' || *token == '#')
+	if (token == NULL || *token == ' ' || *token == '\n')
 	{
 		return;
 	}
