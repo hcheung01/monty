@@ -78,6 +78,7 @@ void _div(stack_t **stk, unsigned int line_number)
 
 	if (variables.temp == 0)
 	{
+		line_number++;
 		fprintf(stderr, "L%d: division by zero\n", line_number);
 		free_stk(stk, line_number);
 		exit(EXIT_FAILURE);
