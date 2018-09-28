@@ -33,11 +33,6 @@ int main(int argc, char *argv[])
 	while (getline(&buf, &bufsize, fp) != -1)
 	{
 		input = strtok(buf, "\n");
-		if (input[0] == '#')
-		{
-			line_number++;
-			continue;
-		}
 		tokenizer(input, &stk, line_number);
 		line_number++;
 	}
