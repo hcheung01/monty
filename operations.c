@@ -91,7 +91,7 @@ void pop(stack_t **stk, unsigned int line_number)
  */
 void pint(stack_t **stk, unsigned int line_number)
 {
-	if (stk == NULL || *stk == NULL)
+	if (*stk == NULL)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
