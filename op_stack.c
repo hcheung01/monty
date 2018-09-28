@@ -11,6 +11,7 @@ void pchar(stack_t **stk, unsigned int line_number)
 {
 	if (stk == NULL || *stk == NULL)
 	{
+		line_number++;
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
@@ -38,6 +39,7 @@ void pstr(stack_t **stk, __attribute__((unused)) unsigned int line_number)
 
 	if (stk == NULL || *stk == NULL || variables.temp == 0)
 	{
+		line_number++;
 		printf("\n");
 		return;
 	}
@@ -64,7 +66,10 @@ void rotl(stack_t **stk, __attribute__((unused))unsigned int line_number)
 	stack_t *topdown;
 
 	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
+	{
+		line_number++;
 		return;
+	}
 
 	topdown = *stk;
 
@@ -90,7 +95,10 @@ void rotr(stack_t **stk, __attribute__((unused))unsigned int line_number)
 	stack_t *bottomsup;
 
 	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
+	{
+		line_number++;
 		return;
+	}
 
 	bottomsup = *stk;
 
