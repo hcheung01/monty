@@ -32,13 +32,11 @@ int main(int argc, char *argv[])
 	}
 	while (getline(&buf, &bufsize, fp) != -1)
 	{
-		if (*buf != '\n')
-		{
-			input = strtok(buf, "\n");
-			tokenizer(input, &stk, line_number);
-		}
+		input = strtok(buf, "\n");
+		tokenizer(input, &stk, line_number);
 		line_number++;
 	}
+	printf("line num %d\n", line_number);
 	fclose(fp);
 	free(buf);
 	if (stk != NULL)
