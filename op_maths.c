@@ -103,6 +103,7 @@ void _mul(stack_t **stk, unsigned int line_number)
 
 	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
 	{
+		line_number++;
 		fprintf(stderr, "L%d: can't mul, stack too short\n",
 			line_number);
 		free_stk(stk, line_number);
