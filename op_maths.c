@@ -85,7 +85,7 @@ void _div(stack_t **stk, unsigned int line_number)
 
 	quote = variables.temp;
 	pop(stk, line_number);
-	quote /= variables.temp;
+	quote = variables.temp / quote;
 	pop(stk, line_number);
 	variables.temp = quote;
 	push(stk, line_number);
