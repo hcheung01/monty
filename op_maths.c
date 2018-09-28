@@ -13,6 +13,7 @@ void add(stack_t **stk, unsigned int line_number)
 
 	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
 	{
+		line_number++;
 		fprintf(stderr, "L%d: can't add, stack too short\n",
 			line_number);
 		free_stk(stk, line_number);
@@ -40,6 +41,7 @@ void sub(stack_t **stk, unsigned int line_number)
 
 	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
 	{
+		line_number++;
 		fprintf(stderr, "L%u: can't sub, stack too short\n",
 			line_number);
 		free_stk(stk, line_number);
@@ -67,6 +69,7 @@ void _div(stack_t **stk, unsigned int line_number)
 
 	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
 	{
+		line_number++;
 		fprintf(stderr, "L%d: can't div, stack too short\n",
 			line_number);
 		free_stk(stk, line_number);
@@ -105,7 +108,7 @@ void _mul(stack_t **stk, unsigned int line_number)
 
 	product = variables.temp;
 	pop(stk, line_number);
-	product *= variables.temp;
+	product = variables.temp * product;
 	pop(stk, line_number);
 	variables.temp = product;
 	push(stk, line_number);
@@ -124,6 +127,7 @@ void _mod(stack_t **stk, unsigned int line_number)
 
 	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
 	{
+		line_number++;
 		fprintf(stderr, "L%d: can't mod, stack too short\n",
 			line_number);
 		free_stk(stk, line_number);
